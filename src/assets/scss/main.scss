@@ -1,0 +1,82 @@
+@import "removeStyle.scss";
+// color: #fff;
+// color:#262626;
+// color: #4faab3;
+// color: #00d1a0;
+@font-face {
+  font-family: MyriadPro;
+  src: url("../fonts/MYRIADPRO-REGULAR.OTF") format("opentype");
+}
+body {
+  font-family: MyriadPro;
+  font-weight: normal;
+
+  background: #008364;
+  padding: 25px;
+}
+
+button {
+  // width: 30%;
+  // height: 30px;
+  // margin-top: 5px;
+  padding: 10px 15px 10px 10px;
+  border-radius: 5px;
+  background-color: #2f8cff;
+  color: #ffffff;
+  &:hover {
+    transition: 0s all;
+    background: #00d1a0;
+  }
+}
+button:active {
+  background: rgba(#8b8893, 0.7);
+}
+.delete {
+  background: #ab4e52;
+}
+.delHov {
+  margin-top: 0;
+  position: absolute;
+  top: 4px;
+  right: -50px;
+  width: 30px;
+  height: 30px;
+  transition: 0.3s all;
+  opacity: 0;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.5s ease;
+}
+
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.list-move {
+  transition: transform 0.5s ease;
+}
+
+/* ensure leaving items are taken out of layout flow so that moving
+   animations can be calculated correctly. */
+.list-leave-active {
+  display: none;
+  position: absolute;
+}
+.container {
+  margin: 0 auto;
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
